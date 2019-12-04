@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="AppTest" duration-ms="31364" started-at="2019-12-04T16:03:53 IST" finished-at="2019-12-04T16:04:24 IST">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="31364" started-at="2019-12-04T16:03:53 IST" finished-at="2019-12-04T16:04:24 IST">
+      <class name="AppTest">
+        <test-method status="PASS" signature="loadDriver()[pri:0, instance:AppTest@4cf777e8]" name="loadDriver" is-config="true" duration-ms="5969" started-at="2019-12-04T16:03:53 IST" finished-at="2019-12-04T16:03:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadDriver -->
+        <test-method status="PASS" signature="getMethod()[pri:0, instance:AppTest@4cf777e8]" name="getMethod" duration-ms="3909" started-at="2019-12-04T16:03:59 IST" finished-at="2019-12-04T16:04:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethod -->
+        <test-method status="PASS" signature="setKeys()[pri:0, instance:AppTest@4cf777e8]" name="setKeys" duration-ms="21462" started-at="2019-12-04T16:04:02 IST" finished-at="2019-12-04T16:04:24 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setKeys -->
+      </class> <!-- AppTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- AppTest -->
+</testng-results>
