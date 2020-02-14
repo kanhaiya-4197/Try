@@ -1,0 +1,34 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- task: O365PostMessageBuild@0
+  inputs:
+    addressType: 'url'
+    url: 'https://outlook.office.com/webhook/901bc67b-5525-4bde-86e5-6b3f132ac61a@e4f40be7-af4a-48c6-aca7-b06218cfc75e/JenkinsCI/18403a05fbdc47debe991af3ab020112/901bc67b-5525-4bde-86e5-6b3f132ac61a'
+    messageType: 'message'
+    title: '${Build.DefinitionName} completed with ${Build.BuildNumber}'
+    summary: '$(Build.DefinitionName) completed'
+    text: '$(Build.DefinitionName) completed successfully'
+    includeLink: true
+    linkText: 'View Build Detail'
+    failBuildOnError: true
+    
